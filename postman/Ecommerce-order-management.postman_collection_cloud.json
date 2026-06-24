@@ -1,0 +1,222 @@
+{
+  "info": {
+    "_postman_id": "efca299c-e813-460e-bf4d-d35f5b8de17c",
+    "name": "Ecommerce-order-management-Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Fuzzy search",
+      "item": [
+        {
+          "name": "Fuzzy search partial search",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://order-management-0dsd.onrender.com/api/v1/search/orders?q=3010",
+              "protocol": "https",
+              "host": [
+                "order-management-0dsd",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "search",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "3010"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fuzzy search ignoring accents",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://order-management-0dsd.onrender.com/api/v1/search/orders?q=angelopolis",
+              "protocol": "https",
+              "host": [
+                "order-management-0dsd",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "search",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "angelopolis"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fuzzy search ortographic mismatch",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://order-management-0dsd.onrender.com/api/v1/search/orders?q=sbots",
+              "protocol": "https",
+              "host": [
+                "order-management-0dsd",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "search",
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "sbots"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "New user - green arrow - without orders",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": \"e2c1a4b3-9876-4532-a1b2-c3234ds\",\r\n  \"firstName\": \"Oliver\",\r\n  \"paternalLastName\": \"Queen\",\r\n  \"maternalLastName\": \"Jonas\",\r\n  \"email\": \"oliver.queen@example.com\",\r\n  \"shippingAddress\": \"Star City\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://order-management-0dsd.onrender.com/api/v1/clients",
+          "protocol": "https",
+          "host": [
+            "order-management-0dsd",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clients"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Barry Allen/Invincible- Registered user with order, and then modified",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://order-management-0dsd.onrender.com/api/v1/clients/75c97531-abf5-4524-8107-90aa48d08efc",
+          "protocol": "https",
+          "host": [
+            "order-management-0dsd",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clients",
+            "75c97531-abf5-4524-8107-90aa48d08efc"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Oliver Green Arrow - Get new user",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://order-management-0dsd.onrender.com/api/v1/clients/e2c1a4b3-9876-4532-a1b2-c3234ds",
+          "protocol": "https",
+          "host": [
+            "order-management-0dsd",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clients",
+            "e2c1a4b3-9876-4532-a1b2-c3234ds"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Barry Allen to Invincible - Update user with existing orders",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstName\": \"Mark\",\r\n  \"paternalLastName\": \"Grayson\",\r\n  \"maternalLastName\": \"Smith\",\r\n  \"email\": \"mark.grayson@example.com\",\r\n  \"shippingAddress\": \"Chicago, Illinois\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://order-management-0dsd.onrender.com/api/v1/clients/75c97531-abf5-4524-8107-90aa48d08efc",
+          "protocol": "https",
+          "host": [
+            "order-management-0dsd",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "clients",
+            "75c97531-abf5-4524-8107-90aa48d08efc"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
