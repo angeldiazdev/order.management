@@ -39,12 +39,20 @@ docker-compose up -d
 
 ## 📖 API Documentation & Testing
 
-**Swagger UI / OpenAPI 3.0**
-Once the application is running, the interactive API documentation will be available at:
+**Swagger UI / OpenAPI 3.0 (Local & Cloud Environments ☁️)**
+For cloud, the interactive API documentation will be available at:
+👉 **[https://order-management-0dsd.onrender.com/swagger-ui/index.html](https://order-management-0dsd.onrender.com/swagger-ui/index.html)**
+
+In local, once the application is running, the interactive API documentation will be available at:
 👉 **[http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)**
 
-**Postman Collection**
-For convenience, a Postman collection containing the full CRUD lifecycle and Fuzzy Search use cases is included in the repository.
+**Postman Collections (Local & Cloud Environments ☁️)**
+For convenience, the `postman/` directory includes two collections containing the full CRUD lifecycle and all Fuzzy Search use cases, tailored for different environments:
+
+* **`Ecommerce-order-management-Local.postman_collection.json`**: Pre-configured to test the API locally (`localhost:8080`).
+* **`Ecommerce-order-management.postman_collection_cloud.json`**: Pre-configured to point directly to the live production environment hosted on Render.
+
+Evaluators can import these collections to test the endpoints seamlessly, whether running the infrastructure on their own machine or interacting directly with the deployed application.
 
 ## 🧪 Running Unit Tests
 
