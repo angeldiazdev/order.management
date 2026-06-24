@@ -31,7 +31,9 @@ public class OrderOutboundAdapter implements OrderRepository {
                 .storeName(dto.getStoreName())
                 .orderStatus(dto.getOrderStatus())
                 .salesChannel(dto.getSalesChannel())
-                .items(List.of()) 
+                .items(dto.getItems() != null ? dto.getItems().stream()
+                        .map(itemId -> Item.builder().itemId(itemId).build())
+                        .collect(Collectors.toList()) : List.of()) 
                 .build()
         ).collect(Collectors.toList());
     }
