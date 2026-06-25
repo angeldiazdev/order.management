@@ -17,20 +17,26 @@ A robust, highly cohesive, and loosely coupled RESTful API designed to manage cu
 
 ## 🚀 Running the Application Locally
 
-Follow these steps to deploy the infrastructure, compile the project, and start the Spring Boot server.
+Follow these steps to set up the environment variables, deploy the infrastructure, compile the project, and start the Spring Boot server.
 
-**1. Start the MongoDB Database**
+**1. Configure Environment Variables**
+Copy the template environment file and rename it to `.env` in the root directory to establish the required configuration properties:
+```bash
+cp .env.example .env
+```
+
+**2. Start the MongoDB Database**
 Ensure Docker is running on your machine, then execute:
 ```bash
 docker-compose up -d
 ```
 
-**2. Compile and Install Dependencies**
+**3. Compile and Install Dependencies**
 ```bash
 ./mvnw clean install
 ```
 
-**3. Run the Spring Boot Application**
+**4. Run the Spring Boot Application**
 ```bash
 ./mvnw spring-boot:run
 ```
