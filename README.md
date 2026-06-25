@@ -23,6 +23,7 @@ Follow these steps to set up the environment variables, deploy the infrastructur
 Copy the template environment file and rename it to `.env` in the root directory to establish the required configuration properties:
 ```bash
 cp .env.example .env
+```
 
 **2. Start the MongoDB Database**
 Ensure Docker is running on your machine, then execute:
